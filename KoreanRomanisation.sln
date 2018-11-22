@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation", "KoreanRomanisation.csproj", "{819DBD2A-8ED3-4941-8D39-AA09BB7FECBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation", "KoreanRomanisation\KoreanRomanisation.csproj", "{819DBD2A-8ED3-4941-8D39-AA09BB7FECBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation.Tests", "..\KoreanRomanisation.Tests\KoreanRomanisation.Tests.csproj", "{84E1EBA2-B88C-415F-AD89-403D09C52FF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation.Tests", "KoreanRomanisation.Tests\KoreanRomanisation.Tests.csproj", "{84E1EBA2-B88C-415F-AD89-403D09C52FF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DDFA259-8631-402D-A222-611E3CAF7594}
 	EndGlobalSection
 EndGlobal
