@@ -1,93 +1,92 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace KoreanRomanisation.Tests
 {
     /// <summary>
     /// A set of tests for the KoreanLetter structure.
     /// </summary>
-    [TestClass]
     public class KoreanLetterTests
     {
         #region IsAKoreanLetter() Tests
 
-        [TestMethod]
+        [Fact]
         public void Is0AKoreanLetterTest()
         {
-            Assert.IsFalse(KoreanLetter.IsAKoreanLetter(0));
+            Assert.False(KoreanLetter.IsAKoreanLetter(0));
         }
 
-        [TestMethod]
+        [Fact]
         public void Is1AKoreanLetterTest()
         {
-            Assert.IsFalse(KoreanLetter.IsAKoreanLetter(1));
+            Assert.False(KoreanLetter.IsAKoreanLetter(1));
         }
 
-        [TestMethod]
+        [Fact]
         public void Is100AKoreanLetterTest()
         {
-            Assert.IsFalse(KoreanLetter.IsAKoreanLetter(100));
+            Assert.False(KoreanLetter.IsAKoreanLetter(100));
         }
 
-        [TestMethod]
+        [Fact]
         public void Is45000AKoreanLetterTest()
         {
-            Assert.IsFalse(KoreanLetter.IsAKoreanLetter(45000));
+            Assert.False(KoreanLetter.IsAKoreanLetter(45000));
         }
 
         #endregion
 
         #region GetKoreanLetterFromInitialCharacterCode() Tests
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromInitialCharacterCode0Test()
         {
-            Assert.AreEqual(KoreanLetter.Giyeok, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(0));
+            Assert.Equal(KoreanLetter.Giyeok, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(0));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromInitialCharacterCode1Test()
         {
-            Assert.AreEqual(KoreanLetter.SsangGiyeok, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(1));
+            Assert.Equal(KoreanLetter.SsangGiyeok, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(1));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromInitialCharacterCode2Test()
         {
-            Assert.AreEqual(KoreanLetter.Nieun, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(2));
+            Assert.Equal(KoreanLetter.Nieun, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(2));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromInitialCharacterCode18Test()
         {
-            Assert.AreEqual(KoreanLetter.Hieut, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(18));
+            Assert.Equal(KoreanLetter.Hieut, KoreanLetter.GetKoreanLetterFromInitialCharacterCode(18));
         }
 
         #endregion
 
         #region GetKoreanLetterFromFinalCharacterCode() Tests
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromFinalCharacterCode1Test()
         {
-            Assert.AreEqual(KoreanLetter.GiyeokBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(1));
+            Assert.Equal(KoreanLetter.GiyeokBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(1));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromFinalCharacterCode2Test()
         {
-            Assert.AreEqual(KoreanLetter.SsangGiyeokBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(2));
+            Assert.Equal(KoreanLetter.SsangGiyeokBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(2));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromFinalCharacterCode3Test()
         {
-            Assert.AreEqual(KoreanLetter.GiyeokShiotBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(3));
+            Assert.Equal(KoreanLetter.GiyeokShiotBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(3));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetKoreanLetterFromFinalCharacterCode27Test()
         {
-            Assert.AreEqual(KoreanLetter.HieutBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(27));
+            Assert.Equal(KoreanLetter.HieutBatchim, KoreanLetter.GetKoreanLetterFromFinalCharacterCode(27));
         }
 
         #endregion
