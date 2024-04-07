@@ -54,6 +54,14 @@ namespace KoreanRomanisation
                 {KoreanLetter.RieulBatchim, KoreanLetter.Nieun, "l"},
                 {KoreanLetter.RieulBatchim, KoreanLetter.Rieul, "l"},
 
+                {KoreanLetter.RieulHieutBatchim, KoreanLetter.Digeut, "t"},
+                {KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Digeut, "tt"},
+                {KoreanLetter.RieulBieupBatchim, KoreanLetter.Digeut, "tt"},
+                {KoreanLetter.NieunJieutBatchim, KoreanLetter.Digeut, "tt"},
+                {KoreanLetter.BieupShiotBatchim, KoreanLetter.Digeut, "tt"},
+                {KoreanLetter.NieunHieutBatchim, KoreanLetter.Digeut, "tt"},
+                {KoreanLetter.RieulMieumBatchim, KoreanLetter.Digeut, "tt"},
+
                 {KoreanLetter.MieumBatchim, KoreanLetter.Rieul, "n"},
 
                 {KoreanLetter.BieupBatchim, KoreanLetter.Rieul, "n"},
@@ -127,7 +135,16 @@ namespace KoreanRomanisation
                 {KoreanLetter.KieukBatchim, "k"},
                 {KoreanLetter.TieutBatchim, "t"},
                 {KoreanLetter.PieupBatchim, "p"},
-                {KoreanLetter.HieutBatchim, "t"}
+                {KoreanLetter.HieutBatchim, "t"},
+                {KoreanLetter.RieulGiyeokBatchim, "k"},
+                {KoreanLetter.RieulHieutBatchim, "l"},
+                {KoreanLetter.RieulBieupBatchim, "l"},
+                {KoreanLetter.NieunJieutBatchim, "n"},
+                {KoreanLetter.BieupShiotBatchim, "b"},
+                {KoreanLetter.NieunHieutBatchim, "n"},
+                {KoreanLetter.RieulMieumBatchim, "m"},
+                {KoreanLetter.GiyeokShiotBatchim, "k"},
+                {KoreanLetter.RieulShiotBatchim, "l"}
             };
 
             var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList(){
@@ -152,6 +169,22 @@ namespace KoreanRomanisation
                 {KoreanLetter.DigeutBatchim, KoreanLetter.Ieung , "d"},
 
                 {KoreanLetter.RieulBatchim, KoreanLetter.Ieung , "r"},
+
+                {KoreanLetter.RieulBieupBatchim, KoreanLetter.Ieung , "lb"},
+
+                {KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Ieung , "lg"},
+
+                {KoreanLetter.RieulHieutBatchim, KoreanLetter.Ieung , "r"},
+
+                {KoreanLetter.NieunJieutBatchim, KoreanLetter.Ieung , "nj"},
+
+                {KoreanLetter.BieupShiotBatchim, KoreanLetter.Ieung , "bs"},
+
+                {KoreanLetter.RieulMieumBatchim, KoreanLetter.Ieung , "lm"},
+
+                {KoreanLetter.GiyeokShiotBatchim, KoreanLetter.Ieung , "ks"},
+
+                {KoreanLetter.RieulShiotBatchim, KoreanLetter.Ieung , "ls"},
 
                 {KoreanLetter.BieupBatchim, KoreanLetter.Ieung , "b"},
                 {KoreanLetter.BieupBatchim, KoreanLetter.Nieun , "m"},

@@ -388,6 +388,26 @@ namespace KoreanRomanisation.Tests
         [InlineData("같하", "gatha")]
         [InlineData("갚하", "gapha")]
         [InlineData("갛하", "gatha")]
+        [InlineData("싫다", "silta")]
+        [InlineData("싫어", "sireo")]
+        [InlineData("읽다", "iktta")]
+        [InlineData("읽어", "ilgeo")]
+        [InlineData("넓다", "neoltta")]
+        [InlineData("넓어", "neolbeo")]
+        [InlineData("없다", "eobtta")]
+        [InlineData("없어", "eobseo")]
+        [InlineData("앉다", "antta")]
+        [InlineData("앉아", "anja")]
+        [InlineData("많다", "mantta")]
+        [InlineData("많아", "mana")]
+        [InlineData("젊다", "jeomtta")]
+        [InlineData("젊어", "jeolmeo")]
+        [InlineData("몫", "mok")]
+        [InlineData("몫은", "mokseun")]
+        // 곬
+        [InlineData("곬", "gol")]
+        [InlineData("곬을", "golseul")]
+        [InlineData("바보", "babo")]
         public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
         {
             RevisedRomanisation1.UseSh = false;
