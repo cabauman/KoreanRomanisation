@@ -61,6 +61,8 @@ public sealed class RevisedRomanisation : Romanisation
             { KoreanLetter.BieupShiotBatchim, KoreanLetter.Digeut, "tt" },
             { KoreanLetter.NieunHieutBatchim, KoreanLetter.Digeut, "tt" },
             { KoreanLetter.RieulMieumBatchim, KoreanLetter.Digeut, "tt" },
+            { KoreanLetter.RieulPieupBatchim, KoreanLetter.Digeut, "tt" },
+            { KoreanLetter.RieulTieutBatchim, KoreanLetter.Digeut, "tt" },
 
             { KoreanLetter.MieumBatchim, KoreanLetter.Rieul, "n" },
 
@@ -146,7 +148,9 @@ public sealed class RevisedRomanisation : Romanisation
             { KoreanLetter.NieunHieutBatchim, "n" },
             { KoreanLetter.RieulMieumBatchim, "m" },
             { KoreanLetter.GiyeokShiotBatchim, "k" },
-            { KoreanLetter.RieulShiotBatchim, "l" }
+            { KoreanLetter.RieulShiotBatchim, "l" },
+            { KoreanLetter.RieulPieupBatchim, "p" },
+            { KoreanLetter.RieulTieutBatchim, "l" }
         };
 
         var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList()
@@ -188,6 +192,10 @@ public sealed class RevisedRomanisation : Romanisation
             { KoreanLetter.GiyeokShiotBatchim, KoreanLetter.Ieung , "ks" },
 
             { KoreanLetter.RieulShiotBatchim, KoreanLetter.Ieung , "ls" },
+
+            { KoreanLetter.RieulPieupBatchim, KoreanLetter.Ieung , "lp" },
+
+            { KoreanLetter.RieulTieutBatchim, KoreanLetter.Ieung , "lt" },
 
             { KoreanLetter.BieupBatchim, KoreanLetter.Ieung , "b" },
             { KoreanLetter.BieupBatchim, KoreanLetter.Nieun , "m" },

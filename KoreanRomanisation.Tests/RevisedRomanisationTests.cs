@@ -404,9 +404,12 @@ public sealed class RevisedRomanisationTests
     [InlineData("젊어", "jeolmeo")]
     [InlineData("몫", "mok")]
     [InlineData("몫은", "mokseun")]
-    // 곬
     [InlineData("곬", "gol")]
     [InlineData("곬을", "golseul")]
+    [InlineData("읊다", "euptta")]
+    [InlineData("읊어", "eulpeo")]
+    [InlineData("핥다", "haltta")]
+    [InlineData("핥아", "halta")]
     [InlineData("바보", "babo")]
     public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
     {

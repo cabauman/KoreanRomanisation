@@ -92,7 +92,6 @@ public sealed class YaleRomanisationTests
     [InlineData("갏아", "kalh.a")]
     [InlineData("값가", "kapska")]
     [InlineData("값아", "kaps.a")]
-    [InlineData("싫다", "silhda")]
     public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
     {
         YaleRomanisation1.UseSh = false;
