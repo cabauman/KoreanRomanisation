@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
     /// <summary>
     /// Represents a section of Korean text.

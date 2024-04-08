@@ -1,12 +1,11 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace KoreanRomanisation
 {
     /// <summary>
     /// Represents a single letter of Korean - a jamo.
     /// </summary>
-    public struct KoreanLetter : IEquatable<KoreanLetter>, IEquatable<char>, IEquatable<int>, IComparable<KoreanLetter>, IComparable<char>, IComparable<int>, IFormattable
+    public readonly struct KoreanLetter : IEquatable<KoreanLetter>, IEquatable<char>, IEquatable<int>, IComparable<KoreanLetter>, IComparable<char>, IComparable<int>, IFormattable
     {
         #region Character Code Constants
 
@@ -26,85 +25,85 @@ namespace KoreanRomanisation
 
         #region Instantiation Shortcuts
 
-        public static KoreanLetter None = new KoreanLetter(-1);
+        public static readonly KoreanLetter None = new KoreanLetter(-1);
 
-        public static KoreanLetter Giyeok = new KoreanLetter('ᄀ');
-        public static KoreanLetter SsangGiyeok = new KoreanLetter('ᄁ');
-        public static KoreanLetter Nieun = new KoreanLetter('ᄂ');
-        public static KoreanLetter Digeut = new KoreanLetter('ᄃ');
-        public static KoreanLetter SsangDigeut = new KoreanLetter('ᄄ');
-        public static KoreanLetter Rieul = new KoreanLetter('ᄅ');
-        public static KoreanLetter Mieum = new KoreanLetter('ᄆ');
-        public static KoreanLetter Bieup = new KoreanLetter('ᄇ');
-        public static KoreanLetter SsangBieup = new KoreanLetter('ᄈ');
-        public static KoreanLetter Shiot = new KoreanLetter('ᄉ');
-        public static KoreanLetter SsangShiot = new KoreanLetter('ᄊ');
-        public static KoreanLetter Ieung = new KoreanLetter('ᄋ');
-        public static KoreanLetter Jieut = new KoreanLetter('ᄌ');
-        public static KoreanLetter SsangJieut = new KoreanLetter('ᄍ');
-        public static KoreanLetter Chieut = new KoreanLetter('ᄎ');
-        public static KoreanLetter Kieuk = new KoreanLetter('ᄏ');
-        public static KoreanLetter Tieut = new KoreanLetter('ᄐ');
-        public static KoreanLetter Pieup = new KoreanLetter('ᄑ');
-        public static KoreanLetter Hieut = new KoreanLetter('ᄒ');
+        public static readonly KoreanLetter Giyeok = new KoreanLetter('ᄀ');
+        public static readonly KoreanLetter SsangGiyeok = new KoreanLetter('ᄁ');
+        public static readonly KoreanLetter Nieun = new KoreanLetter('ᄂ');
+        public static readonly KoreanLetter Digeut = new KoreanLetter('ᄃ');
+        public static readonly KoreanLetter SsangDigeut = new KoreanLetter('ᄄ');
+        public static readonly KoreanLetter Rieul = new KoreanLetter('ᄅ');
+        public static readonly KoreanLetter Mieum = new KoreanLetter('ᄆ');
+        public static readonly KoreanLetter Bieup = new KoreanLetter('ᄇ');
+        public static readonly KoreanLetter SsangBieup = new KoreanLetter('ᄈ');
+        public static readonly KoreanLetter Shiot = new KoreanLetter('ᄉ');
+        public static readonly KoreanLetter SsangShiot = new KoreanLetter('ᄊ');
+        public static readonly KoreanLetter Ieung = new KoreanLetter('ᄋ');
+        public static readonly KoreanLetter Jieut = new KoreanLetter('ᄌ');
+        public static readonly KoreanLetter SsangJieut = new KoreanLetter('ᄍ');
+        public static readonly KoreanLetter Chieut = new KoreanLetter('ᄎ');
+        public static readonly KoreanLetter Kieuk = new KoreanLetter('ᄏ');
+        public static readonly KoreanLetter Tieut = new KoreanLetter('ᄐ');
+        public static readonly KoreanLetter Pieup = new KoreanLetter('ᄑ');
+        public static readonly KoreanLetter Hieut = new KoreanLetter('ᄒ');
 
-        public static KoreanLetter A = new KoreanLetter('ᅡ');
-        public static KoreanLetter Ae = new KoreanLetter('ᅢ');
-        public static KoreanLetter Ya = new KoreanLetter('ᅣ');
-        public static KoreanLetter Yae = new KoreanLetter('ᅤ');
-        public static KoreanLetter Eo = new KoreanLetter('ᅥ');
-        public static KoreanLetter E = new KoreanLetter('ᅦ');
-        public static KoreanLetter Yeo = new KoreanLetter('ᅧ');
-        public static KoreanLetter Ye = new KoreanLetter('ᅨ');
-        public static KoreanLetter O = new KoreanLetter('ᅩ');
-        public static KoreanLetter Wa = new KoreanLetter('ᅪ');
-        public static KoreanLetter Wae = new KoreanLetter('ᅫ');
-        public static KoreanLetter Oe = new KoreanLetter('ᅬ');
-        public static KoreanLetter Yo = new KoreanLetter('ᅭ');
-        public static KoreanLetter U = new KoreanLetter('ᅮ');
-        public static KoreanLetter Wo = new KoreanLetter('ᅯ');
-        public static KoreanLetter We = new KoreanLetter('ᅰ');
-        public static KoreanLetter Wi = new KoreanLetter('ᅱ');
-        public static KoreanLetter Yu = new KoreanLetter('ᅲ');
-        public static KoreanLetter Eu = new KoreanLetter('ᅳ');
-        public static KoreanLetter Ui = new KoreanLetter('ᅴ');
-        public static KoreanLetter I = new KoreanLetter('ᅵ');
+        public static readonly KoreanLetter A = new KoreanLetter('ᅡ');
+        public static readonly KoreanLetter Ae = new KoreanLetter('ᅢ');
+        public static readonly KoreanLetter Ya = new KoreanLetter('ᅣ');
+        public static readonly KoreanLetter Yae = new KoreanLetter('ᅤ');
+        public static readonly KoreanLetter Eo = new KoreanLetter('ᅥ');
+        public static readonly KoreanLetter E = new KoreanLetter('ᅦ');
+        public static readonly KoreanLetter Yeo = new KoreanLetter('ᅧ');
+        public static readonly KoreanLetter Ye = new KoreanLetter('ᅨ');
+        public static readonly KoreanLetter O = new KoreanLetter('ᅩ');
+        public static readonly KoreanLetter Wa = new KoreanLetter('ᅪ');
+        public static readonly KoreanLetter Wae = new KoreanLetter('ᅫ');
+        public static readonly KoreanLetter Oe = new KoreanLetter('ᅬ');
+        public static readonly KoreanLetter Yo = new KoreanLetter('ᅭ');
+        public static readonly KoreanLetter U = new KoreanLetter('ᅮ');
+        public static readonly KoreanLetter Wo = new KoreanLetter('ᅯ');
+        public static readonly KoreanLetter We = new KoreanLetter('ᅰ');
+        public static readonly KoreanLetter Wi = new KoreanLetter('ᅱ');
+        public static readonly KoreanLetter Yu = new KoreanLetter('ᅲ');
+        public static readonly KoreanLetter Eu = new KoreanLetter('ᅳ');
+        public static readonly KoreanLetter Ui = new KoreanLetter('ᅴ');
+        public static readonly KoreanLetter I = new KoreanLetter('ᅵ');
 
-        public static KoreanLetter GiyeokBatchim = new KoreanLetter('ᆨ');
-        public static KoreanLetter SsangGiyeokBatchim = new KoreanLetter('ᆩ');
-        public static KoreanLetter GiyeokShiotBatchim = new KoreanLetter('ᆪ');
-        public static KoreanLetter NieunBatchim = new KoreanLetter('ᆫ');
-        public static KoreanLetter NieunJieutBatchim = new KoreanLetter('ᆬ');
-        public static KoreanLetter NieunHieutBatchim = new KoreanLetter('ᆭ');
-        public static KoreanLetter DigeutBatchim = new KoreanLetter('ᆮ');
-        public static KoreanLetter RieulBatchim = new KoreanLetter('ᆯ');
-        public static KoreanLetter RieulGiyeokBatchim = new KoreanLetter('ᆰ');
-        public static KoreanLetter RieulMieumBatchim = new KoreanLetter('ᆱ');
-        public static KoreanLetter RieulBieupBatchim = new KoreanLetter('ᆲ');
-        public static KoreanLetter RieulShiotBatchim = new KoreanLetter('ᆳ');
-        public static KoreanLetter RieulTieutBatchim = new KoreanLetter('ᆴ');
-        public static KoreanLetter RieulPieupBatchim = new KoreanLetter('ᆵ');
-        public static KoreanLetter RieulHieutBatchim = new KoreanLetter('ᆶ');
-        public static KoreanLetter MieumBatchim = new KoreanLetter('ᆷ');
-        public static KoreanLetter BieupBatchim = new KoreanLetter('ᆸ');
-        public static KoreanLetter BieupShiotBatchim = new KoreanLetter('ᆹ');
-        public static KoreanLetter ShiotBatchim = new KoreanLetter('ᆺ');
-        public static KoreanLetter SsangShiotBatchim = new KoreanLetter('ᆻ');
-        public static KoreanLetter IeungBatchim = new KoreanLetter('ᆼ');
-        public static KoreanLetter JieutBatchim = new KoreanLetter('ᆽ');
-        public static KoreanLetter ChieutBatchim = new KoreanLetter('ᆾ');
-        public static KoreanLetter KieukBatchim = new KoreanLetter('ᆿ');
-        public static KoreanLetter TieutBatchim = new KoreanLetter('ᇀ');
-        public static KoreanLetter PieupBatchim = new KoreanLetter('ᇁ');
-        public static KoreanLetter HieutBatchim = new KoreanLetter('ᇂ');
+        public static readonly KoreanLetter GiyeokBatchim = new KoreanLetter('ᆨ');
+        public static readonly KoreanLetter SsangGiyeokBatchim = new KoreanLetter('ᆩ');
+        public static readonly KoreanLetter GiyeokShiotBatchim = new KoreanLetter('ᆪ');
+        public static readonly KoreanLetter NieunBatchim = new KoreanLetter('ᆫ');
+        public static readonly KoreanLetter NieunJieutBatchim = new KoreanLetter('ᆬ');
+        public static readonly KoreanLetter NieunHieutBatchim = new KoreanLetter('ᆭ');
+        public static readonly KoreanLetter DigeutBatchim = new KoreanLetter('ᆮ');
+        public static readonly KoreanLetter RieulBatchim = new KoreanLetter('ᆯ');
+        public static readonly KoreanLetter RieulGiyeokBatchim = new KoreanLetter('ᆰ');
+        public static readonly KoreanLetter RieulMieumBatchim = new KoreanLetter('ᆱ');
+        public static readonly KoreanLetter RieulBieupBatchim = new KoreanLetter('ᆲ');
+        public static readonly KoreanLetter RieulShiotBatchim = new KoreanLetter('ᆳ');
+        public static readonly KoreanLetter RieulTieutBatchim = new KoreanLetter('ᆴ');
+        public static readonly KoreanLetter RieulPieupBatchim = new KoreanLetter('ᆵ');
+        public static readonly KoreanLetter RieulHieutBatchim = new KoreanLetter('ᆶ');
+        public static readonly KoreanLetter MieumBatchim = new KoreanLetter('ᆷ');
+        public static readonly KoreanLetter BieupBatchim = new KoreanLetter('ᆸ');
+        public static readonly KoreanLetter BieupShiotBatchim = new KoreanLetter('ᆹ');
+        public static readonly KoreanLetter ShiotBatchim = new KoreanLetter('ᆺ');
+        public static readonly KoreanLetter SsangShiotBatchim = new KoreanLetter('ᆻ');
+        public static readonly KoreanLetter IeungBatchim = new KoreanLetter('ᆼ');
+        public static readonly KoreanLetter JieutBatchim = new KoreanLetter('ᆽ');
+        public static readonly KoreanLetter ChieutBatchim = new KoreanLetter('ᆾ');
+        public static readonly KoreanLetter KieukBatchim = new KoreanLetter('ᆿ');
+        public static readonly KoreanLetter TieutBatchim = new KoreanLetter('ᇀ');
+        public static readonly KoreanLetter PieupBatchim = new KoreanLetter('ᇁ');
+        public static readonly KoreanLetter HieutBatchim = new KoreanLetter('ᇂ');
 
         #endregion
 
         #region Core Properties
 
-        private int _CharacterCode;
+        private readonly int _CharacterCode;
 
-        public int CharacterCode { get { return _CharacterCode; } }
+        public int CharacterCode => _CharacterCode;
 
         #endregion
 
@@ -203,7 +202,7 @@ namespace KoreanRomanisation
 
         public bool Equals(KoreanLetter KoreanLetter1)
         {
-            if (KoreanLetter1 == null)
+            if (KoreanLetter1 == default)
             {
                 return false;
             }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 
 namespace KoreanRomanisation
 {
@@ -16,7 +14,8 @@ namespace KoreanRomanisation
 
         protected override void SetRules()
         {
-            var InitialRomanisationRulesList = new RomanisationRuleList() {
+            var InitialRomanisationRulesList = new RomanisationRuleList()
+            {
                 { KoreanLetter.Giyeok, "k" },
                 { KoreanLetter.SsangGiyeok, "kk" },
                 { KoreanLetter.Nieun, "n" },
@@ -38,93 +37,95 @@ namespace KoreanRomanisation
                 { KoreanLetter.Hieut, "h" }
             };
 
-            var MedialRomanisationRulesList = new RomanisationRuleList(){
-                {KoreanLetter.A, "a"},
-                {KoreanLetter.Ae, "ay"},
-                {KoreanLetter.Ya, "ya"},
-                {KoreanLetter.Yae, "yay"},
-                {KoreanLetter.Eo, "e"},
-                {KoreanLetter.E, "ey"},
-                {KoreanLetter.Yeo, "ye"},
-                {KoreanLetter.Ye, "yey"},
-                {KoreanLetter.O, "o"},
-                {KoreanLetter.Wa, "wa"},
-                {KoreanLetter.Wae, "way"},
-                {KoreanLetter.Oe, "oy"},
-                {KoreanLetter.Yo, "yo"},
-                {KoreanLetter.U, "u"},
-                {KoreanLetter.Wo, "we"},
-                {KoreanLetter.We, "wey"},
-                {KoreanLetter.Wi, "wi"},
-                {KoreanLetter.Yu, "yu"},
-                {KoreanLetter.Eu, "u"},
-                {KoreanLetter.Ui, "uy"},
-                {KoreanLetter.I, "i" }
+            var MedialRomanisationRulesList = new RomanisationRuleList()
+            {
+                { KoreanLetter.A, "a" },
+                { KoreanLetter.Ae, "ay" },
+                { KoreanLetter.Ya, "ya" },
+                { KoreanLetter.Yae, "yay" },
+                { KoreanLetter.Eo, "e" },
+                { KoreanLetter.E, "ey" },
+                { KoreanLetter.Yeo, "ye" },
+                { KoreanLetter.Ye, "yey" },
+                { KoreanLetter.O, "o" },
+                { KoreanLetter.Wa, "wa" },
+                { KoreanLetter.Wae, "way" },
+                { KoreanLetter.Oe, "oy" },
+                { KoreanLetter.Yo, "yo" },
+                { KoreanLetter.U, "u" },
+                { KoreanLetter.Wo, "we" },
+                { KoreanLetter.We, "wey" },
+                { KoreanLetter.Wi, "wi" },
+                { KoreanLetter.Yu, "yu" },
+                { KoreanLetter.Eu, "u" },
+                { KoreanLetter.Ui, "uy" },
+                { KoreanLetter.I, "i" }
             };
 
-            var FinalRomanisationRulesList = new RomanisationRuleList(){
-                {KoreanLetter.GiyeokBatchim, "k"},
-                {KoreanLetter.SsangGiyeokBatchim, "kk"},
-                {KoreanLetter.GiyeokShiotBatchim, "ks"},
-                {KoreanLetter.NieunBatchim, "n"},
-                {KoreanLetter.NieunJieutBatchim, "nc"},
-                {KoreanLetter.NieunHieutBatchim, "nh"},
-                {KoreanLetter.DigeutBatchim, "t"},
-                {KoreanLetter.RieulBatchim, "l"},
-                {KoreanLetter.RieulGiyeokBatchim, "lk"},
-                {KoreanLetter.RieulMieumBatchim, "lm"},
-                {KoreanLetter.RieulBieupBatchim, "lp"},
-                {KoreanLetter.RieulShiotBatchim, "ls"},
-                {KoreanLetter.RieulTieutBatchim, "lth"},
-                {KoreanLetter.RieulPieupBatchim, "lph"},
-                {KoreanLetter.RieulHieutBatchim, "lh"},
-                {KoreanLetter.MieumBatchim, "m"},
-                {KoreanLetter.BieupBatchim, "p"},
-                {KoreanLetter.BieupShiotBatchim, "ps"},
-                {KoreanLetter.ShiotBatchim, "s"},
-                {KoreanLetter.SsangShiotBatchim, "ss"},
-                {KoreanLetter.IeungBatchim, "ng"},
-                {KoreanLetter.JieutBatchim, "c"},
-                {KoreanLetter.ChieutBatchim, "ch"},
-                {KoreanLetter.KieukBatchim, "kh"},
-                {KoreanLetter.TieutBatchim, "th"},
-                {KoreanLetter.PieupBatchim, "ph"},
-                {KoreanLetter.HieutBatchim, "h" }
+            var FinalRomanisationRulesList = new RomanisationRuleList()
+            {
+                { KoreanLetter.GiyeokBatchim, "k" },
+                { KoreanLetter.SsangGiyeokBatchim, "kk" },
+                { KoreanLetter.GiyeokShiotBatchim, "ks" },
+                { KoreanLetter.NieunBatchim, "n" },
+                { KoreanLetter.NieunJieutBatchim, "nc" },
+                { KoreanLetter.NieunHieutBatchim, "nh" },
+                { KoreanLetter.DigeutBatchim, "t" },
+                { KoreanLetter.RieulBatchim, "l" },
+                { KoreanLetter.RieulGiyeokBatchim, "lk" },
+                { KoreanLetter.RieulMieumBatchim, "lm" },
+                { KoreanLetter.RieulBieupBatchim, "lp" },
+                { KoreanLetter.RieulShiotBatchim, "ls" },
+                { KoreanLetter.RieulTieutBatchim, "lth" },
+                { KoreanLetter.RieulPieupBatchim, "lph" },
+                { KoreanLetter.RieulHieutBatchim, "lh" },
+                { KoreanLetter.MieumBatchim, "m" },
+                { KoreanLetter.BieupBatchim, "p" },
+                { KoreanLetter.BieupShiotBatchim, "ps" },
+                { KoreanLetter.ShiotBatchim, "s" },
+                { KoreanLetter.SsangShiotBatchim, "ss" },
+                { KoreanLetter.IeungBatchim, "ng" },
+                { KoreanLetter.JieutBatchim, "c" },
+                { KoreanLetter.ChieutBatchim, "ch" },
+                { KoreanLetter.KieukBatchim, "kh" },
+                { KoreanLetter.TieutBatchim, "th" },
+                { KoreanLetter.PieupBatchim, "ph" },
+                { KoreanLetter.HieutBatchim, "h" }
             };
 
 
-            var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList() {
+            var FinalPronunciationChangeRomanisationRulesList = new PronunciationChangeRomanisationRuleList()
+            {
+                { KoreanLetter.GiyeokShiotBatchim, KoreanLetter.Ieung, "ks." },
+                { KoreanLetter.GiyeokShiotBatchim, KoreanLetter.Shiot, "ks." },
 
-                {KoreanLetter.GiyeokShiotBatchim, KoreanLetter.Ieung, "ks." },
-                {KoreanLetter.GiyeokShiotBatchim, KoreanLetter.Shiot, "ks." },
+                { KoreanLetter.NieunJieutBatchim, KoreanLetter.Ieung, "nc." },
+                { KoreanLetter.NieunJieutBatchim, KoreanLetter.Jieut, "nc." },
+                { KoreanLetter.NieunJieutBatchim, KoreanLetter.Hieut, "nc." },
 
-                {KoreanLetter.NieunJieutBatchim, KoreanLetter.Ieung, "nc." },
-                {KoreanLetter.NieunJieutBatchim, KoreanLetter.Jieut, "nc." },
-                {KoreanLetter.NieunJieutBatchim, KoreanLetter.Hieut, "nc." },
+                { KoreanLetter.NieunHieutBatchim, KoreanLetter.Ieung, "nh." },
 
-                {KoreanLetter.NieunHieutBatchim, KoreanLetter.Ieung, "nh." },
+                { KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Ieung, "lk." },
+                { KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Giyeok, "lk." },
+                { KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Hieut, "lk." },
 
-                {KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Ieung, "lk." },
-                {KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Giyeok, "lk." },
-                {KoreanLetter.RieulGiyeokBatchim, KoreanLetter.Hieut, "lk." },
+                { KoreanLetter.RieulMieumBatchim, KoreanLetter.Ieung, "lm." },
 
-                {KoreanLetter.RieulMieumBatchim, KoreanLetter.Ieung, "lm." },
+                { KoreanLetter.RieulBieupBatchim, KoreanLetter.Ieung, "lp." },
+                { KoreanLetter.RieulBieupBatchim, KoreanLetter.Bieup, "lp." },
+                { KoreanLetter.RieulBieupBatchim, KoreanLetter.Hieut, "lp." },
 
-                {KoreanLetter.RieulBieupBatchim, KoreanLetter.Ieung, "lp." },
-                {KoreanLetter.RieulBieupBatchim, KoreanLetter.Bieup, "lp." },
-                {KoreanLetter.RieulBieupBatchim, KoreanLetter.Hieut, "lp." },
+                { KoreanLetter.RieulShiotBatchim, KoreanLetter.Ieung, "ls." },
+                { KoreanLetter.RieulShiotBatchim, KoreanLetter.Shiot, "ls." },
 
-                {KoreanLetter.RieulShiotBatchim, KoreanLetter.Ieung, "ls." },
-                {KoreanLetter.RieulShiotBatchim, KoreanLetter.Shiot, "ls." },
+                { KoreanLetter.RieulTieutBatchim, KoreanLetter.Ieung, "lth." },
 
-                {KoreanLetter.RieulTieutBatchim, KoreanLetter.Ieung, "lth." },
+                { KoreanLetter.RieulPieupBatchim, KoreanLetter.Ieung, "lph." },
 
-                {KoreanLetter.RieulPieupBatchim, KoreanLetter.Ieung, "lph." },
+                { KoreanLetter.RieulHieutBatchim, KoreanLetter.Ieung, "lh." },
 
-                {KoreanLetter.RieulHieutBatchim, KoreanLetter.Ieung, "lh." },
-
-                {KoreanLetter.BieupShiotBatchim, KoreanLetter.Ieung, "ps." },
-                {KoreanLetter.BieupShiotBatchim, KoreanLetter.Shiot, "ps." }
+                { KoreanLetter.BieupShiotBatchim, KoreanLetter.Ieung, "ps." },
+                { KoreanLetter.BieupShiotBatchim, KoreanLetter.Shiot, "ps." }
 
             };
 

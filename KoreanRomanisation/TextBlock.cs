@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
     /// <summary>
     /// Represents a block of Korean or mixed Korean and non-Korean text to be romanised.

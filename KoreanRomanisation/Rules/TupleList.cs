@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace KoreanRomanisation
+﻿namespace KoreanRomanisation
 {
     /// <summary>
     /// Represents a list of two-item tuples. Makes it easier to hard-code romanisation rules.

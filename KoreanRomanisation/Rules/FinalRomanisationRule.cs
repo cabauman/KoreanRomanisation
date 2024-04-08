@@ -7,7 +7,8 @@
     {
         public KoreanLetter Final { get; private set; }
 
-        public FinalRomanisationRule(KoreanLetter Final1, string Romanisation1) : base(Romanisation1)
+        public FinalRomanisationRule(KoreanLetter Final1, string Romanisation1)
+            : base(Romanisation1)
         {
             Final = Final1;
         }

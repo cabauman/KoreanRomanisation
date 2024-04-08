@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation", "KoreanRomanisation\KoreanRomanisation.csproj", "{819DBD2A-8ED3-4941-8D39-AA09BB7FECBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoreanRomanisation", "KoreanRomanisation\KoreanRomanisation.csproj", "{819DBD2A-8ED3-4941-8D39-AA09BB7FECBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanRomanisation.Tests", "KoreanRomanisation.Tests\KoreanRomanisation.Tests.csproj", "{84E1EBA2-B88C-415F-AD89-403D09C52FF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoreanRomanisation.Tests", "KoreanRomanisation.Tests\KoreanRomanisation.Tests.csproj", "{84E1EBA2-B88C-415F-AD89-403D09C52FF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFCF86E9-0AE0-4359-BDE9-48375B9290E2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

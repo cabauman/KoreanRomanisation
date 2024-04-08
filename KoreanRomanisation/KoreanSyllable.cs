@@ -1,12 +1,11 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace KoreanRomanisation
 {
     /// <summary>
     /// Represents a syllable in Korean.
     /// </summary>
-    public struct KoreanSyllable : IEquatable<KoreanSyllable>, IEquatable<char>, IEquatable<int>, IComparable<KoreanSyllable>, IComparable<char>, IComparable<int>, IFormattable
+    public readonly struct KoreanSyllable : IEquatable<KoreanSyllable>, IEquatable<char>, IEquatable<int>, IComparable<KoreanSyllable>, IComparable<char>, IComparable<int>, IFormattable
     {
         #region Character Code Constants
 
@@ -21,9 +20,9 @@ namespace KoreanRomanisation
 
         #region Core Properties
 
-        private int _CharacterCode;
+        private readonly int _CharacterCode;
 
-        public int CharacterCode { get { return _CharacterCode; } }
+        public int CharacterCode => _CharacterCode;
 
         public KoreanLetter Initial
         {
@@ -128,7 +127,7 @@ namespace KoreanRomanisation
 
         public bool Equals(KoreanSyllable KoreanSyllable1)
         {
-            if (KoreanSyllable1 == null)
+            if (KoreanSyllable1 == default)
             {
                 return false;
             }
