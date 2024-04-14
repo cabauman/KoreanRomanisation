@@ -103,14 +103,14 @@ public abstract class Romanisation : IRomanisation
         return IMedials.Any(m => m == Letter);
     }
 
-    public string RomaniseText(string Text)
+    public string RomaniseText(string Text, bool useDashes = false)
     {
         var TextBlock1 = GetTextBlock(Text);
 
-        return RomaniseTextBlock(TextBlock1);
+        return RomaniseTextBlock(TextBlock1, useDashes);
     }
 
-    public string RomaniseTextBlock(TextBlock TextBlock1)
+    public string RomaniseTextBlock(TextBlock TextBlock1, bool useDashes)
     {
         var StringBuilder1 = new StringBuilder();
 
@@ -135,7 +135,7 @@ public abstract class Romanisation : IRomanisation
                         {
                             PrecedingSyllable = Syllables[i - 1];
                         }
-                        else if (i < Syllables.Length - 1)
+                        if (i < Syllables.Length - 1)
                         {
                             SucceedingSyllable = Syllables[i + 1];
                         }
@@ -143,6 +143,10 @@ public abstract class Romanisation : IRomanisation
                         RomanisedText = RomaniseSyllable(Syllable, PrecedingSyllable, SucceedingSyllable);
 
                         StringBuilder1.Append(RomanisedText);
+                        if (useDashes && i < Syllables.Length - 1)
+                        {
+                            StringBuilder1.Append('-');
+                        }
                     }
                 }
                 else if (Syllables.Length == 1)

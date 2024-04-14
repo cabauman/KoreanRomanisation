@@ -372,7 +372,7 @@ public sealed class RevisedRomanisationTests
     [InlineData("같파", "gatpa")]
     [InlineData("갚파", "gap-pa")]
     [InlineData("갛파", "gatpa")]
-    [InlineData("각하", "gakha")]
+    [InlineData("각하", "gaka")]
     [InlineData("갂하", "gakha")]
     [InlineData("간하", "ganha")]
     [InlineData("갇하", "gatha")]
@@ -390,32 +390,72 @@ public sealed class RevisedRomanisationTests
     [InlineData("갛하", "gatha")]
     [InlineData("싫다", "silta")]
     [InlineData("싫어", "sireo")]
-    [InlineData("읽다", "iktta")]
+    [InlineData("읽다", "ikda")]
     [InlineData("읽어", "ilgeo")]
-    [InlineData("넓다", "neoltta")]
+    [InlineData("넓다", "neolda")]
     [InlineData("넓어", "neolbeo")]
-    [InlineData("없다", "eobtta")]
+    [InlineData("없다", "eobda")]
     [InlineData("없어", "eobseo")]
-    [InlineData("앉다", "antta")]
+    [InlineData("앉다", "anda")]
     [InlineData("앉아", "anja")]
-    [InlineData("많다", "mantta")]
+    [InlineData("많다", "manta")]
     [InlineData("많아", "mana")]
-    [InlineData("젊다", "jeomtta")]
+    [InlineData("젊다", "jeomda")]
     [InlineData("젊어", "jeolmeo")]
     [InlineData("몫", "mok")]
     [InlineData("몫은", "mokseun")]
     [InlineData("곬", "gol")]
     [InlineData("곬을", "golseul")]
-    [InlineData("읊다", "euptta")]
+    [InlineData("읊다", "eupda")]
     [InlineData("읊어", "eulpeo")]
-    [InlineData("핥다", "haltta")]
+    [InlineData("핥다", "halda")]
     [InlineData("핥아", "halta")]
     [InlineData("바보", "babo")]
+    [InlineData("같이", "gachi")]
+    [InlineData("굳이", "guji")]
+    [InlineData("왕십리", "wangsimni")]
+    [InlineData("먹다", "meokda")]
+    [InlineData("믿는", "minneun")]
+    [InlineData("했나", "haenna")]
+    [InlineData("깎는", "kkangneun")]
+    [InlineData("학교", "hakgyo")]
+    [InlineData("학년", "hangnyeon")]
+    [InlineData("막혀", "makyeo")]
+    [InlineData("닫히다", "dachida")]
+    [InlineData("닫혀", "dachyeo")] // *** datyeo
+    [InlineData("붙여", "buchyeo")] // *** butyeo
+    [InlineData("폭력", "pongnyeok")]
+    [InlineData("심리", "simni")]
+    [InlineData("법무", "beommu")]
+    [InlineData("송곳니", "songgonni")]
+    [InlineData("밑이", "michi")]
+    // 붙여요
+    [InlineData("먹어", "meogeo")]
     public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
     {
         RevisedRomanisation1.UseSh = false;
 
         Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean));
+    }
+
+    [Theory]
+    [InlineData("학년", "hang-nyeon")]
+    [InlineData("막혀", "mak-yeo")]
+    [InlineData("닫히다", "da-chi-da")]
+    [InlineData("닫혀", "da-chyeo")] // *** datyeo
+    [InlineData("붙여", "bu-chyeo")] // *** butyeo
+    [InlineData("폭력", "pong-nyeok")]
+    [InlineData("심리", "sim-ni")]
+    [InlineData("법무", "beom-mu")]
+    [InlineData("송곳니", "song-gon-ni")]
+    [InlineData("밑이", "mi-chi")]
+    // 붙여요
+    [InlineData("먹어", "meog-eo")]
+    public void RomaniseTextTest2(string Korean, string ExpectedRomanisation)
+    {
+        RevisedRomanisation1.UseSh = false;
+
+        Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean, true));
     }
 
     [Theory]

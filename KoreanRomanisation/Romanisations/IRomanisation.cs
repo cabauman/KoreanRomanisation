@@ -22,14 +22,14 @@ public interface IRomanisation
     /// </summary>
     /// <param name="Text"></param>
     /// <returns></returns>
-    string RomaniseText(string Text);
+    string RomaniseText(string Text, bool useDashes);
 
     /// <summary>
     /// Romanise a given text block.
     /// </summary>
     /// <param name="TextBlock1"></param>
     /// <returns></returns>
-    string RomaniseTextBlock(TextBlock TextBlock1);
+    string RomaniseTextBlock(TextBlock TextBlock1, bool useDashes);
 
     /// <summary>
     /// Romanise a given Korean syllable.
