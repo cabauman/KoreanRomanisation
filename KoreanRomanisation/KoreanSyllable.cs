@@ -113,7 +113,25 @@ public readonly struct KoreanSyllable : IEquatable<KoreanSyllable>, IEquatable<c
             throw new ArgumentOutOfRangeException(nameof(Final1), $"The final character code must be between 0 and {NumberOfFinals - 1}");
         }
 
-        _CharacterCode = Initial1 * NumberOfMedials * NumberOfFinals + Medial1 * NumberOfFinals + Final1;
+        _CharacterCode = FirstKoreanSyllableCharacterCode + Initial1 * NumberOfMedials * NumberOfFinals + Medial1 * NumberOfFinals + Final1;
+    }
+
+    public static char GetInitialVersionOfFinal(int FinalCharacterCode)
+    {
+        var Initial = FinalCharacterCode - KoreanLetter.FirstCommonFinalCharacterCode;
+        return (char)(Initial + KoreanLetter.FirstCommonInitialCharacterCode);
+    }
+
+    public static KoreanSyllable FromCodes(int initialCharCode, int medialCharCode, int finalCharCode = -1)
+    {
+        if (initialCharCode == -1)
+        {
+            initialCharCode = KoreanLetter.Ieung.CharacterCode;
+        }
+        var Initial1 = initialCharCode - KoreanLetter.FirstCommonInitialCharacterCode;
+        var Medial1 = medialCharCode - KoreanLetter.FirstCommonMedialCharacterCode;
+        var Final1 = finalCharCode is -1 or 0 ? 0 : finalCharCode - KoreanLetter.FirstCommonFinalCharacterCode;
+        return new KoreanSyllable(Initial1, Medial1, Final1);
     }
 
     public static bool IsAKoreanSyllable(int CharacterCode1)

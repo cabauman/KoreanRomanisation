@@ -9,16 +9,16 @@ public readonly struct KoreanLetter : IEquatable<KoreanLetter>, IEquatable<char>
 {
     #region Character Code Constants
 
-    private const int FirstKoreanLetterCharacterCode = 4352;
+    public const int FirstKoreanLetterCharacterCode = 4352;
     private const int LastKoreanLetterCharacterCode = 4607;
 
-    private const int FirstCommonInitialCharacterCode = 4352;
+    public const int FirstCommonInitialCharacterCode = 4352;
     private const int LastCommonInitialCharacterCode = 4370;
 
-    private const int FirstCommonMedialCharacterCode = 4449;
+    public const int FirstCommonMedialCharacterCode = 4449;
     private const int LastCommonMedialCharacterCode = 4469;
 
-    private const int FirstCommonFinalCharacterCode = 4520;
+    public const int FirstCommonFinalCharacterCode = 4520;
     private const int LastCommonFinalCharacterCode = 4546;
 
     #endregion

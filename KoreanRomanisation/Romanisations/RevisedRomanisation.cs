@@ -305,6 +305,13 @@ public sealed class RevisedRomanisation : Romanisation
                 }
             }
 
+            if (Syllable.Initial == KoreanLetter.Ieung && PrecedingSyllable.Value.Final != KoreanLetter.None && PrecedingSyllable.Value.Final != KoreanLetter.Ieung)
+            {
+                var newInitial = KoreanSyllable.GetInitialVersionOfFinal(PrecedingSyllable.Value.Final.CharacterCode);
+                Syllable = KoreanSyllable.FromCodes(newInitial, Syllable.Medial.CharacterCode, Syllable.Final.CharacterCode);
+                PrecedingSyllable = KoreanSyllable.FromCodes(PrecedingSyllable.Value.Initial.CharacterCode, PrecedingSyllable.Value.Medial.CharacterCode, KoreanLetter.None.CharacterCode);
+            }
+
             var PronunciationChangeRomanisationRule = InitialPronunciationChangeRomanisationRules.FirstOrDefault(r => r.PrecedingFinal == PrecedingSyllable.Value.Final && r.Initial == Syllable.Initial);
 
             if (PronunciationChangeRomanisationRule != null)
@@ -346,6 +353,15 @@ public sealed class RevisedRomanisation : Romanisation
                     (SucceedingSyllable.Value.Initial == KoreanLetter.Ieung || SucceedingSyllable.Value.Initial == KoreanLetter.Hieut) &&
                     (SucceedingSyllable.Value.Medial == KoreanLetter.I || SucceedingSyllable.Value.Medial == KoreanLetter.Yeo))
                 {
+                    return "";
+                }
+
+                if (SucceedingSyllable.Value.Initial == KoreanLetter.Ieung && Syllable.Final != KoreanLetter.None && Syllable.Final != KoreanLetter.Ieung)
+                {
+                    var syllable = KoreanSyllable.FromCodes(Syllable.Initial.CharacterCode, Syllable.Medial.CharacterCode);
+                    var newInitial = KoreanSyllable.GetInitialVersionOfFinal(Syllable.Final.CharacterCode);
+                    SucceedingSyllable = KoreanSyllable.FromCodes(newInitial, SucceedingSyllable.Value.Medial.CharacterCode, SucceedingSyllable.Value.Final.CharacterCode);
+                    Syllable = syllable;
                     return "";
                 }
 
