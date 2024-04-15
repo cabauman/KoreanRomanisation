@@ -139,13 +139,11 @@ public sealed class YaleRomanization : Romanization
 
     public override string RomanizeSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null)
     {
-        var StringBuilder1 = new StringBuilder();
+        _stringBuilder.Append(RomanizeInitial(Syllable));
+        _stringBuilder.Append(RomanizeMedial(Syllable));
+        _stringBuilder.Append(RomanizeFinal(Syllable, PrecedingSyllable, SucceedingSyllable));
 
-        StringBuilder1.Append(RomanizeInitial(Syllable));
-        StringBuilder1.Append(RomanizeMedial(Syllable));
-        StringBuilder1.Append(RomanizeFinal(Syllable, PrecedingSyllable, SucceedingSyllable));
-
-        return StringBuilder1.ToString();
+        return _stringBuilder.ToString();
     }
 
     private string RomanizeInitial(KoreanSyllable Syllable)

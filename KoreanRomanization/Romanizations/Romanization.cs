@@ -7,6 +7,8 @@ namespace KoreanRomanization;
 /// </summary>
 public abstract class Romanization : IRomanization
 {
+    protected StringBuilder _stringBuilder = new();
+
     #region Properties
 
     public bool PreserveNonKoreanText { get; set; }
@@ -58,7 +60,7 @@ public abstract class Romanization : IRomanization
             {
                 var Syllable = new KoreanSyllable(Character);
 
-                if (NonKoreanTextSection1.Content != "")
+                if (!string.IsNullOrEmpty(NonKoreanTextSection1.Content))
                 {
                     TextBlock1.TextSections.Add(NonKoreanTextSection1);
                     NonKoreanTextSection1 = new NonKoreanTextSection();
@@ -78,12 +80,12 @@ public abstract class Romanization : IRomanization
             }
         }
 
-        if (NonKoreanTextSection1.Content != "")
+        if (!string.IsNullOrEmpty(NonKoreanTextSection1.Content))
         {
             TextBlock1.TextSections.Add(NonKoreanTextSection1);
         }
 
-        if (KoreanTextSection1.Syllables.Any())
+        if (KoreanTextSection1.Syllables.Count > 0)
         {
             TextBlock1.TextSections.Add(KoreanTextSection1);
         }
@@ -112,7 +114,7 @@ public abstract class Romanization : IRomanization
 
     public string RomanizeTextBlock(TextBlock TextBlock1, bool useDashes)
     {
-        var StringBuilder1 = new StringBuilder();
+        _stringBuilder.Clear();
 
         foreach (var TextSection in TextBlock1.TextSections)
         {
@@ -142,10 +144,10 @@ public abstract class Romanization : IRomanization
 
                         RomanizedText = RomanizeSyllable(Syllable, PrecedingSyllable, SucceedingSyllable);
 
-                        StringBuilder1.Append(RomanizedText);
+                        _stringBuilder.Append(RomanizedText);
                         if (useDashes && i < Syllables.Length - 1)
                         {
-                            StringBuilder1.Append('-');
+                            _stringBuilder.Append('-');
                         }
                     }
                 }
@@ -153,18 +155,18 @@ public abstract class Romanization : IRomanization
                 {
                     var RomanizedText = RomanizeSyllable(Syllables[0]);
 
-                    StringBuilder1.Append(RomanizedText);
+                    _stringBuilder.Append(RomanizedText);
                 }
             }
             else if (TextSection is NonKoreanTextSection)
             {
                 var Content = (TextSection as NonKoreanTextSection).Content;
 
-                StringBuilder1.Append(Content);
+                _stringBuilder.Append(Content);
             }
         }
 
-        return StringBuilder1.ToString();
+        return _stringBuilder.ToString();
     }
 
     public abstract string RomanizeSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
