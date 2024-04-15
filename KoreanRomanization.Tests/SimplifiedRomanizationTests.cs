@@ -1,17 +1,17 @@
 ﻿using Xunit;
 
-namespace KoreanRomanisation.Tests;
+namespace KoreanRomanization.Tests;
 
 /// <summary>
-/// A set of tests for the Simplified Romanisation converter.
+/// A set of tests for the Simplified Romanization converter.
 /// </summary>
-public sealed class SimplifiedRomanisationTests
+public sealed class SimplifiedRomanizationTests
 {
-    private SimplifiedRomanisation SimplifiedRomanisation1;
+    private SimplifiedRomanization SimplifiedRomanization1;
 
-    public SimplifiedRomanisationTests()
+    public SimplifiedRomanizationTests()
     {
-        SimplifiedRomanisation1 = new SimplifiedRomanisation();
+        SimplifiedRomanization1 = new SimplifiedRomanization();
     }
 
     [Theory]
@@ -388,11 +388,11 @@ public sealed class SimplifiedRomanisationTests
     [InlineData("같하", "kata")]
     [InlineData("갚하", "kapa")]
     [InlineData("갛하", "kata")]
-    public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextTest(string Korean, string ExpectedRomanization)
     {
-        SimplifiedRomanisation1.UseSh = false;
+        SimplifiedRomanization1.UseSh = false;
 
-        Assert.Equal(ExpectedRomanisation, SimplifiedRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, SimplifiedRomanization1.RomanizeText(Korean));
     }
 
     [Theory]
@@ -410,10 +410,10 @@ public sealed class SimplifiedRomanisationTests
     [InlineData("쎼", "shyei")]
     [InlineData("쑈", "shyo")]
     [InlineData("쓔", "shyoo")]
-    public void RomaniseTextUsingShTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextUsingShTest(string Korean, string ExpectedRomanization)
     {
-        SimplifiedRomanisation1.UseSh = true;
+        SimplifiedRomanization1.UseSh = true;
 
-        Assert.Equal(ExpectedRomanisation, SimplifiedRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, SimplifiedRomanization1.RomanizeText(Korean));
     }
 }

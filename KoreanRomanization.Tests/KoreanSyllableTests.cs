@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace KoreanRomanisation.Tests;
+namespace KoreanRomanization.Tests;
 
 /// <summary>
 /// A set of tests for the KoreanSyllable structure.

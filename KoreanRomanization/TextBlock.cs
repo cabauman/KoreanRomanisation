@@ -1,7 +1,7 @@
-﻿namespace KoreanRomanisation;
+﻿namespace KoreanRomanization;
 
 /// <summary>
-/// Represents a block of Korean or mixed Korean and non-Korean text to be romanised.
+/// Represents a block of Korean or mixed Korean and non-Korean text to be Romanized.
 /// </summary>
 public class TextBlock
 {

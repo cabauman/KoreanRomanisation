@@ -1,4 +1,4 @@
-﻿namespace KoreanRomanisation;
+﻿namespace KoreanRomanization;
 
 /// <summary>
 /// Represents a section of Korean text.

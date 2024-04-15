@@ -1,4 +1,4 @@
-﻿namespace KoreanRomanisation;
+﻿namespace KoreanRomanization;
 
 public interface ITextSection
 {

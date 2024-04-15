@@ -1,17 +1,17 @@
 ﻿using Xunit;
 
-namespace KoreanRomanisation.Tests;
+namespace KoreanRomanization.Tests;
 
 /// <summary>
-/// A set of tests for the McCune-Reischauer Romanisation converter.
+/// A set of tests for the McCune-Reischauer Romanization converter.
 /// </summary>
-public sealed class McCuneReischauerRomanisationTests
+public sealed class McCuneReischauerRomanizationTests
 {
-    private McCuneReischauerRomanisation McCuneReischauerRomanisation1;
+    private McCuneReischauerRomanization McCuneReischauerRomanization1;
 
-    public McCuneReischauerRomanisationTests()
+    public McCuneReischauerRomanizationTests()
     {
-        McCuneReischauerRomanisation1 = new McCuneReischauerRomanisation();
+        McCuneReischauerRomanization1 = new McCuneReischauerRomanization();
     }
 
     [Theory]
@@ -376,11 +376,11 @@ public sealed class McCuneReischauerRomanisationTests
     [InlineData("같하", "katha")]
     [InlineData("갚하", "kapha")]
     [InlineData("갛하", "katha")]
-    public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextTest(string Korean, string ExpectedRomanization)
     {
-        McCuneReischauerRomanisation1.UseSh = false;
+        McCuneReischauerRomanization1.UseSh = false;
 
-        Assert.Equal(ExpectedRomanisation, McCuneReischauerRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, McCuneReischauerRomanization1.RomanizeText(Korean));
     }
 
     [Theory]
@@ -398,10 +398,10 @@ public sealed class McCuneReischauerRomanisationTests
     [InlineData("쎼", "sshye")]
     [InlineData("쑈", "sshyo")]
     [InlineData("쓔", "sshyu")]
-    public void RomaniseTextUsingShTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextUsingShTest(string Korean, string ExpectedRomanization)
     {
-        McCuneReischauerRomanisation1.UseSh = true;
+        McCuneReischauerRomanization1.UseSh = true;
 
-        Assert.Equal(ExpectedRomanisation, McCuneReischauerRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, McCuneReischauerRomanization1.RomanizeText(Korean));
     }
 }

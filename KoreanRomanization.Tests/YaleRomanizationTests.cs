@@ -1,17 +1,17 @@
 ﻿using Xunit;
 
-namespace KoreanRomanisation.Tests;
+namespace KoreanRomanization.Tests;
 
 /// <summary>
-/// A set of tests for the Yale Romanisation converter.
+/// A set of tests for the Yale Romanization converter.
 /// </summary>
-public sealed class YaleRomanisationTests
+public sealed class YaleRomanizationTests
 {
-    private YaleRomanisation YaleRomanisation1;
+    private YaleRomanization YaleRomanization1;
 
-    public YaleRomanisationTests()
+    public YaleRomanizationTests()
     {
-        YaleRomanisation1 = new YaleRomanisation();
+        YaleRomanization1 = new YaleRomanization();
     }
 
     [Theory]
@@ -92,10 +92,10 @@ public sealed class YaleRomanisationTests
     [InlineData("갏아", "kalh.a")]
     [InlineData("값가", "kapska")]
     [InlineData("값아", "kaps.a")]
-    public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextTest(string Korean, string ExpectedRomanization)
     {
-        YaleRomanisation1.UseSh = false;
+        YaleRomanization1.UseSh = false;
 
-        Assert.Equal(ExpectedRomanisation, YaleRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, YaleRomanization1.RomanizeText(Korean));
     }
 }

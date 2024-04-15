@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KoreanRomanisation\KoreanRomanisation.csproj">
-      <Name>KoreanRomanisation</Name>
+    <ProjectReference Include="..\KoreanRomanization\KoreanRomanization.csproj">
+      <Name>KoreanRomanization</Name>
     </ProjectReference>
   </ItemGroup>
 

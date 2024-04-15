@@ -1,11 +1,11 @@
 ﻿using System.Text;
 
-namespace KoreanRomanisation;
+namespace KoreanRomanization;
 
 /// <summary>
-/// A base class for classes that can romanise Korean text according to their own internal romanisation rules.
+/// A base class for classes that can Romanize Korean text according to their own internal Romanization rules.
 /// </summary>
-public abstract class Romanisation : IRomanisation
+public abstract class Romanization : IRomanization
 {
     #region Properties
 
@@ -13,19 +13,19 @@ public abstract class Romanisation : IRomanisation
     public bool UseSh { get; set; }
     public bool UseOi { get; set; }
 
-    protected IEnumerable<InitialRomanisationRule> InitialRomanisationRules;
-    protected IEnumerable<InitialPronunciationChangeRomanisationRule> InitialPronunciationChangeRomanisationRules;
+    protected IEnumerable<InitialRomanizationRule> InitialRomanizationRules;
+    protected IEnumerable<InitialPronunciationChangeRomanizationRule> InitialPronunciationChangeRomanizationRules;
 
-    protected IEnumerable<MedialRomanisationRule> MedialRomanisationRules;
+    protected IEnumerable<MedialRomanizationRule> MedialRomanizationRules;
 
-    protected IEnumerable<FinalRomanisationRule> FinalRomanisationRules;
-    protected IEnumerable<FinalPronunciationChangeRomanisationRule> FinalPronunciationChangeRomanisationRules;
+    protected IEnumerable<FinalRomanizationRule> FinalRomanizationRules;
+    protected IEnumerable<FinalPronunciationChangeRomanizationRule> FinalPronunciationChangeRomanizationRules;
 
     #endregion
 
     #region Constructors
 
-    public Romanisation()
+    public Romanization()
     {
         PreserveNonKoreanText = true;
         UseSh = true;
@@ -33,13 +33,13 @@ public abstract class Romanisation : IRomanisation
     }
 
     /// <summary>
-    /// Sets the rules of the romanisation system. In this library, romanisation rules are hard-coded, since they rarely change - this function is where they are set.
+    /// Sets the rules of the Romanization system. In this library, Romanization rules are hard-coded, since they rarely change - this function is where they are set.
     /// </summary>
     protected abstract void SetRules();
 
     #endregion
 
-    #region Romanisation Functions
+    #region Romanization Functions
 
     /// <summary>
     /// Takes a text string and converts it into a text block of Korean and non-Korean text sections.
@@ -92,7 +92,7 @@ public abstract class Romanisation : IRomanisation
     }
 
     /// <summary>
-    /// Returns whether or not the given letter is an 'i' medial, which is useful for romanising the letters shiot and ssangshiot.
+    /// Returns whether or not the given letter is an 'i' medial, which is useful for Romanizing the letters shiot and ssangshiot.
     /// </summary>
     /// <param name="Letter"></param>
     /// <returns></returns>
@@ -103,14 +103,14 @@ public abstract class Romanisation : IRomanisation
         return IMedials.Any(m => m == Letter);
     }
 
-    public string RomaniseText(string Text, bool useDashes = false)
+    public string RomanizeText(string Text, bool useDashes = false)
     {
         var TextBlock1 = GetTextBlock(Text);
 
-        return RomaniseTextBlock(TextBlock1, useDashes);
+        return RomanizeTextBlock(TextBlock1, useDashes);
     }
 
-    public string RomaniseTextBlock(TextBlock TextBlock1, bool useDashes)
+    public string RomanizeTextBlock(TextBlock TextBlock1, bool useDashes)
     {
         var StringBuilder1 = new StringBuilder();
 
@@ -129,7 +129,7 @@ public abstract class Romanisation : IRomanisation
                         KoreanSyllable Syllable = Syllables[i];
                         KoreanSyllable? SucceedingSyllable = null;
 
-                        var RomanisedText = "";
+                        var RomanizedText = "";
 
                         if (i > 0)
                         {
@@ -140,9 +140,9 @@ public abstract class Romanisation : IRomanisation
                             SucceedingSyllable = Syllables[i + 1];
                         }
 
-                        RomanisedText = RomaniseSyllable(Syllable, PrecedingSyllable, SucceedingSyllable);
+                        RomanizedText = RomanizeSyllable(Syllable, PrecedingSyllable, SucceedingSyllable);
 
-                        StringBuilder1.Append(RomanisedText);
+                        StringBuilder1.Append(RomanizedText);
                         if (useDashes && i < Syllables.Length - 1)
                         {
                             StringBuilder1.Append('-');
@@ -151,9 +151,9 @@ public abstract class Romanisation : IRomanisation
                 }
                 else if (Syllables.Length == 1)
                 {
-                    var RomanisedText = RomaniseSyllable(Syllables[0]);
+                    var RomanizedText = RomanizeSyllable(Syllables[0]);
 
-                    StringBuilder1.Append(RomanisedText);
+                    StringBuilder1.Append(RomanizedText);
                 }
             }
             else if (TextSection is NonKoreanTextSection)
@@ -167,8 +167,8 @@ public abstract class Romanisation : IRomanisation
         return StringBuilder1.ToString();
     }
 
-    public abstract string RomaniseSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
-    public abstract string RomaniseLetter(KoreanLetter Letter);
+    public abstract string RomanizeSyllable(KoreanSyllable Syllable, KoreanSyllable? PrecedingSyllable = null, KoreanSyllable? SucceedingSyllable = null);
+    public abstract string RomanizeLetter(KoreanLetter Letter);
 
     #endregion
 }

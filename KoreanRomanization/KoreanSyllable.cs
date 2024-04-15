@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace KoreanRomanisation;
+namespace KoreanRomanization;
 
 /// <summary>
 /// Represents a syllable in Korean.

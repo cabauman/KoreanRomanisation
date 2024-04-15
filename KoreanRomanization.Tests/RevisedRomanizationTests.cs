@@ -1,17 +1,17 @@
 ﻿using Xunit;
 
-namespace KoreanRomanisation.Tests;
+namespace KoreanRomanization.Tests;
 
 /// <summary>
-/// A set of tests for the Revised Romanisation converter.
+/// A set of tests for the Revised Romanization converter.
 /// </summary>
-public sealed class RevisedRomanisationTests
+public sealed class RevisedRomanizationTests
 {
-    private RevisedRomanisation RevisedRomanisation1;
+    private RevisedRomanization RevisedRomanization1;
 
-    public RevisedRomanisationTests()
+    public RevisedRomanizationTests()
     {
-        RevisedRomanisation1 = new RevisedRomanisation();
+        RevisedRomanization1 = new RevisedRomanization();
     }
 
     [Theory]
@@ -431,11 +431,11 @@ public sealed class RevisedRomanisationTests
     [InlineData("밑이", "michi")]
     // 붙여요
     [InlineData("먹어", "meogeo")]
-    public void RomaniseTextTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextTest(string Korean, string ExpectedRomanization)
     {
-        RevisedRomanisation1.UseSh = false;
+        RevisedRomanization1.UseSh = false;
 
-        Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, RevisedRomanization1.RomanizeText(Korean));
     }
 
     [Theory]
@@ -451,11 +451,11 @@ public sealed class RevisedRomanisationTests
     [InlineData("밑이", "mi-chi")]
     // 붙여요
     [InlineData("먹어", "meog-eo")]
-    public void RomaniseTextTest2(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextTest2(string Korean, string ExpectedRomanization)
     {
-        RevisedRomanisation1.UseSh = false;
+        RevisedRomanization1.UseSh = false;
 
-        Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean, true));
+        Assert.Equal(ExpectedRomanization, RevisedRomanization1.RomanizeText(Korean, true));
     }
 
     [Theory]
@@ -473,10 +473,10 @@ public sealed class RevisedRomanisationTests
     [InlineData("쎼", "sshye")]
     [InlineData("쑈", "sshyo")]
     [InlineData("쓔", "sshyu")]
-    public void RomaniseTextUsingShTest(string Korean, string ExpectedRomanisation)
+    public void RomanizeTextUsingShTest(string Korean, string ExpectedRomanization)
     {
-        RevisedRomanisation1.UseSh = true;
+        RevisedRomanization1.UseSh = true;
 
-        Assert.Equal(ExpectedRomanisation, RevisedRomanisation1.RomaniseText(Korean));
+        Assert.Equal(ExpectedRomanization, RevisedRomanization1.RomanizeText(Korean));
     }
 }
